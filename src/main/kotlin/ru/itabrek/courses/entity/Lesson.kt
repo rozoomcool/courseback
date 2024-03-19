@@ -14,16 +14,16 @@ class Lesson(
     val id: Long? = null,
 
     @Column(name = "title", nullable = false)
-    val title: String,
+    var title: String,
 
     @OneToMany(cascade = [CascadeType.ALL])
     @JoinColumn(name = "stage_id", nullable = false)
-    val stages: MutableSet<Stage>,
+    var stages: MutableSet<Stage>,
 
     @Column(name = "created_at", nullable = false, updatable = false) @CreationTimestamp
-    var createdAt: Date? = null,
+    val createdAt: Date? = null,
 
     @Column(name = "updated_at", nullable = false) @UpdateTimestamp
-    var updatedAt: Date? = null
+    val updatedAt: Date? = null
 ) {
 }

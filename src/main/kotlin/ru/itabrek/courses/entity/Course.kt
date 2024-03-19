@@ -13,26 +13,26 @@ class Course(
     val id: Long? = null,
 
     @Column(name = "title", nullable = false)
-    val title: String,
+    var title: String,
 
     @Column(name = "description", nullable = false)
-    val description: String,
+    var description: String,
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    val teacher: User? = null,
+    @ManyToOne(targetEntity = User::class, fetch = FetchType.LAZY)
+    var teacher: User? = null,
 
     @OneToMany(cascade = [CascadeType.ALL])
     @JoinColumn(name = "course_id", nullable = false)
-    val lessons: MutableSet<Lesson>,
+    var lessons: MutableSet<Lesson>,
 
     @Column(name = "complexity", nullable = false) @Enumerated(EnumType.STRING)
-    val complexity: Complexity,
+    var complexity: Complexity,
 
     @Column(name = "created_at", nullable = false, updatable = false) @CreationTimestamp
-    var createdAt: Date? = null,
+    val createdAt: Date? = null,
 
     @Column(name = "updated_at", nullable = false) @UpdateTimestamp
-    var updatedAt: Date? = null
+    val updatedAt: Date? = null
 ) {
 
 }

@@ -47,8 +47,8 @@ class SecurityConfiguration(
 
             .authorizeHttpRequests { request ->
                 request
-                    .requestMatchers(HttpMethod.POST, "/course/**").hasRole(Role.ADMIN.name)
-                    .requestMatchers(HttpMethod.PUT, "/course/**").hasRole(Role.ADMIN.name)
+                    .requestMatchers(HttpMethod.POST, "/course/**").hasAnyAuthority(Role.ADMIN.name)
+                    .requestMatchers(HttpMethod.PUT, "/course/**").hasAnyAuthority(Role.ADMIN.name, Role.TEACHER.name)
                     .requestMatchers("/auth/**").permitAll()
                     .requestMatchers("/actuator/**").permitAll()
                     .requestMatchers("/health/**").permitAll()

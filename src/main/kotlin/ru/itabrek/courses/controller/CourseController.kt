@@ -38,6 +38,6 @@ class CourseController(
     @PutMapping
     fun updateCourse(@RequestBody course: Course): ResponseEntity<Course> {
         logger.info("COURSE/UPDATE")
-        return ResponseEntity(courseService.save(course), HttpStatus.OK)
+        return ResponseEntity(courseService.update(course), HttpStatus.OK)
     }
 }

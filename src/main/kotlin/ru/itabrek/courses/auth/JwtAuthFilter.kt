@@ -15,6 +15,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component
 import org.springframework.util.StringUtils
 import org.springframework.web.filter.OncePerRequestFilter
+import ru.itabrek.courses.entity.User
 import ru.itabrek.courses.service.UserService
 import java.io.IOException
 
@@ -47,6 +48,7 @@ class JwtAuthFilter(
         val username: String = try {
             accessTokenService.extractUsername(jwt)
         } catch (e: Exception) {
+            println("::::" + e.message)
             filterChain.doFilter(request, response)
             return
         }

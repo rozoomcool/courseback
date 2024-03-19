@@ -16,10 +16,10 @@ class Stage(
     val id: Long? = null,
 
     @Column(name = "content_type", nullable = false) @Enumerated(EnumType.STRING)
-    val contentType: ContentType,
+    var contentType: ContentType,
 
     @Column(name = "content", nullable = false)
-    val content: String,
+    var content: String,
 
     @Column(name = "created_at", nullable = false, updatable = false) @CreationTimestamp
     var createdAt: Date? = null,

@@ -2,6 +2,7 @@ package ru.itabrek.courses.service
 
 import jakarta.transaction.Transactional
 import org.springframework.security.core.context.SecurityContextHolder
+import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.stereotype.Service
@@ -15,7 +16,7 @@ import ru.itabrek.courses.repository.UserRepository
 class UserService(
     private val userRepository: UserRepository,
     private val userDataRepository: UserDataRepository
-) {
+): UserDetailsService {
 
     @Transactional
     fun create(user: User): User {
@@ -38,11 +39,15 @@ class UserService(
         return userRepository.findByUsername(username) ?: throw UsernameNotFoundException("User not found")
     }
 
-    fun userDetailsService(): UserDetailsService = UserDetailsService { username -> this.findByUsername(username) }
+    fun userDetailsService(): UserDetailsService = UserDetailsService { username -> this.loadUserByUsername(username) }
 
     fun getCurrentUser(): User {
 //        return SecurityContextHolder.getContext().authentication.principal as User
         val username = SecurityContextHolder.getContext().authentication.name
         return findByUsername(username)
+    }
+
+    override fun loadUserByUsername(username: String): UserDetails {
+        return userRepository.findByUsername(username) ?: throw UsernameNotFoundException("User not found")
     }
 }
