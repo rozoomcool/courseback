@@ -14,10 +14,16 @@ class DataLoader(
 ): CommandLineRunner {
     override fun run(vararg args: String?) {
         addAdmin()
+        addStudent()
     }
 
     fun addAdmin() {
         val resp = authService.create(UserCreateRequest(username = "admin", password = "admin", role = Role.ADMIN))
+        println(resp)
+    }
+
+    fun addStudent() {
+        val resp = authService.create(UserCreateRequest(username = "user", password = "user", role = Role.STUDENT))
         println(resp)
     }
 }

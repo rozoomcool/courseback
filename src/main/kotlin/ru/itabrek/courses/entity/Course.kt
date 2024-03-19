@@ -19,7 +19,7 @@ class Course(
     val description: String,
 
     @ManyToOne(fetch = FetchType.LAZY)
-    val teacher: User,
+    val teacher: User? = null,
 
     @OneToMany(cascade = [CascadeType.ALL])
     @JoinColumn(name = "course_id", nullable = false)

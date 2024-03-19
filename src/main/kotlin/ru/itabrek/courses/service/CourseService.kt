@@ -19,19 +19,22 @@ class CourseService(
 ) {
 
     @Transactional
-    fun save(request: CourseRequest): Course {
+    fun save(request: Course): Course {
         val course = Course(
+            id = request.id,
             title = request.title,
             description = request.description,
-            teacher = userService.getCurrentUser(),
+            teacher = request.teacher ?: userService.getCurrentUser(),
             complexity = request.complexity,
-            lessons = request.lessons.map { lessonRequest ->
+            lessons = request.lessons.map { lesson ->
                 (Lesson(
-                    title = lessonRequest.title,
-                    stages = lessonRequest.stages.map { stageRequest ->
+                    id = lesson.id,
+                    title = lesson.title,
+                    stages = lesson.stages.map { stage ->
                         Stage(
-                            contentType = stageRequest.contentType,
-                            content = stageRequest.content
+                            id = stage.id,
+                            contentType = stage.contentType,
+                            content = stage.content
                         )
                     }.toMutableSet()
                 ))

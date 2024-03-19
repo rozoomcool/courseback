@@ -25,7 +25,8 @@ class RefreshTokenService {
         val claims: MutableMap<String, Any?> = HashMap()
         if (userDetails is User) {
             claims["username"] = userDetails.username
-            claims["role"] = userDetails.authorities
+            claims["role"] = userDetails.role
+            claims["authorities"] = userDetails.authorities
         }
         return generateToken(claims, userDetails)
     }

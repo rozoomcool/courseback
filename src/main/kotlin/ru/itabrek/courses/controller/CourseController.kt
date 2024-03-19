@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatusCode
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -23,7 +24,7 @@ class CourseController(
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
     @PostMapping
-    fun createCourse(@RequestBody courseRequest: CourseRequest): ResponseEntity<Course> {
+    fun createCourse(@RequestBody courseRequest: Course): ResponseEntity<Course> {
         logger.info("COURSE/CREATE")
         return ResponseEntity(courseService.save(courseRequest), HttpStatus.CREATED)
     }
@@ -32,5 +33,11 @@ class CourseController(
     fun getAllCourses(): ResponseEntity<Iterable<Course>> {
         logger.info("COURSE/GET_ALL")
         return ResponseEntity(courseService.getAllCourses(), HttpStatus.OK)
+    }
+
+    @PutMapping
+    fun updateCourse(@RequestBody course: Course): ResponseEntity<Course> {
+        logger.info("COURSE/UPDATE")
+        return ResponseEntity(courseService.save(course), HttpStatus.OK)
     }
 }

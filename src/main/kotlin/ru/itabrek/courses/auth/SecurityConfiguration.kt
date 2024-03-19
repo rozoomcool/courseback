@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Lazy
+import org.springframework.http.HttpMethod
 import org.springframework.security.access.expression.SecurityExpressionHandler
 import org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl
 import org.springframework.security.authentication.AuthenticationManager
@@ -20,6 +21,7 @@ import org.springframework.security.web.SecurityFilterChain
 import org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 import org.springframework.web.cors.CorsConfiguration
+import ru.itabrek.courses.model.Role
 import ru.itabrek.courses.service.UserService
 
 @Configuration
@@ -42,9 +44,11 @@ class SecurityConfiguration(
                     corsConfiguration
                 }
             }
+
             .authorizeHttpRequests { request ->
                 request
-                    .requestMatchers("/course/**").authenticated()
+                    .requestMatchers(HttpMethod.POST, "/course/**").hasRole(Role.ADMIN.name)
+                    .requestMatchers(HttpMethod.PUT, "/course/**").hasRole(Role.ADMIN.name)
                     .requestMatchers("/auth/**").permitAll()
                     .requestMatchers("/actuator/**").permitAll()
                     .requestMatchers("/health/**").permitAll()
@@ -74,7 +78,7 @@ class SecurityConfiguration(
     @Bean
     fun roleHierarchy(): RoleHierarchyImpl {
         val roleHierarchy = RoleHierarchyImpl()
-        roleHierarchy.setHierarchy("ROLE_ADMIN > ROLE_USER")
+        roleHierarchy.setHierarchy("ROLE_ADMIN > ROLE_TEACHER \n ROLE_TEACHER > ROLE_STUDENT")
         return roleHierarchy
     }
 
