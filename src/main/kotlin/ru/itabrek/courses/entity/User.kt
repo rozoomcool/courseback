@@ -1,5 +1,6 @@
 package ru.itabrek.courses.entity
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.UpdateTimestamp
@@ -30,6 +31,7 @@ class User(
     @Column(name = "updated_at", nullable = false) @UpdateTimestamp
     var updatedAt: Date? = null
 ): UserDetails {
+    @JsonIgnore
     override fun getAuthorities(): MutableCollection<out GrantedAuthority> {
         return mutableListOf(SimpleGrantedAuthority(role.name))
     }

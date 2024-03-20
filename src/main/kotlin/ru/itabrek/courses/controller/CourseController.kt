@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import ru.itabrek.courses.dto.CourseRequest
+import ru.itabrek.courses.dto.CourseResponse
 import ru.itabrek.courses.entity.Course
 import ru.itabrek.courses.service.CourseService
 
@@ -24,20 +25,20 @@ class CourseController(
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
     @PostMapping
-    fun createCourse(@RequestBody courseRequest: Course): ResponseEntity<Course> {
+    fun createCourse(@RequestBody courseRequest: Course): ResponseEntity<CourseResponse> {
         logger.info("COURSE/CREATE")
-        return ResponseEntity(courseService.save(courseRequest), HttpStatus.CREATED)
+        return ResponseEntity(CourseResponse.loadFrom(courseService.save(courseRequest)), HttpStatus.CREATED)
     }
 
     @GetMapping
-    fun getAllCourses(): ResponseEntity<Iterable<Course>> {
+    fun getAllCourses(): ResponseEntity<Iterable<CourseResponse>> {
         logger.info("COURSE/GET_ALL")
-        return ResponseEntity(courseService.getAllCourses(), HttpStatus.OK)
+        return ResponseEntity(courseService.getAllCourses().map { CourseResponse.loadFrom(it) }, HttpStatus.OK)
     }
 
     @PutMapping
-    fun updateCourse(@RequestBody course: Course): ResponseEntity<Course> {
+    fun updateCourse(@RequestBody course: Course): ResponseEntity<CourseResponse> {
         logger.info("COURSE/UPDATE")
-        return ResponseEntity(courseService.update(course), HttpStatus.OK)
+        return ResponseEntity(CourseResponse.loadFrom(courseService.update(course)), HttpStatus.OK)
     }
 }

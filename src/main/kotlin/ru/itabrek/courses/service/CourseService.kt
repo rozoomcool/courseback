@@ -51,7 +51,6 @@ class CourseService(
         course.apply {
             title = request.title
             description = request.description
-            teacher = course.teacher ?: userService.getCurrentUser()
             complexity = request.complexity
             lessons = request.lessons.map { lesson ->
                 lesson.apply {
