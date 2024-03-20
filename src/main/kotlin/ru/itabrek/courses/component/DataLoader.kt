@@ -15,15 +15,18 @@ class DataLoader(
     override fun run(vararg args: String?) {
         addAdmin()
         addStudent()
+        addTeacher()
     }
 
     fun addAdmin() {
         val resp = authService.create(UserCreateRequest(username = "admin", password = "admin", role = Role.ADMIN))
-        println(resp)
     }
 
     fun addStudent() {
-        val resp = authService.create(UserCreateRequest(username = "user", password = "user", role = Role.STUDENT))
-        println(resp)
+        val resp = authService.create(UserCreateRequest(username = "student", password = "student", role = Role.STUDENT))
+    }
+
+    fun addTeacher() {
+        val resp = authService.create(UserCreateRequest(username = "teacher", password = "teacher", role = Role.TEACHER))
     }
 }
