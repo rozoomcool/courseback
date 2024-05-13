@@ -33,6 +33,4 @@ class Course(
 
     @Column(name = "updated_at", nullable = false) @UpdateTimestamp
     val updatedAt: Date? = null
-) {
-
-}
+)

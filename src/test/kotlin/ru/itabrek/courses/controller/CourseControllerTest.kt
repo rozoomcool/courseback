@@ -42,6 +42,7 @@ class CourseControllerTest(
                 "title": "title",
                 "description": "desc",
                 "complexity": "EASY",
+                "teacher": "",
                 "lessons": [
                     {
                         "title": "title",

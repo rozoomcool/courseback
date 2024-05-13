@@ -17,6 +17,9 @@ import javax.crypto.SecretKey
 class AccessTokenService {
     @Value("\${token.access}")
     private val jwtSigningKey: String? = null
+    companion object {
+        private const val ACCESS_EXPIRATION: Long = 60 * 24 * 1000 * 1000
+    }
 
     fun extractUsername(token: String): String {
         return extractClaim(token) { obj: Claims -> obj.subject }
@@ -55,7 +58,7 @@ class AccessTokenService {
             .claims(extraClaims)
             .subject(userDetails.username)
             .issuedAt(Date(System.currentTimeMillis()))
-            .expiration(Date(System.currentTimeMillis() + 1000 * 60 * 24))
+            .expiration(Date(System.currentTimeMillis() + ACCESS_EXPIRATION))
             .signWith(signingKey, Jwts.SIG.HS256).compact()
     }
 
