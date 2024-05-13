@@ -1,9 +1,7 @@
-package ru.itabrek.courses.auth
+package ru.itabrek.courses.configuration
 
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.context.annotation.Lazy
 import org.springframework.http.HttpMethod
 import org.springframework.security.access.expression.SecurityExpressionHandler
 import org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl
@@ -21,6 +19,7 @@ import org.springframework.security.web.SecurityFilterChain
 import org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 import org.springframework.web.cors.CorsConfiguration
+import ru.itabrek.courses.auth.JwtAuthFilter
 import ru.itabrek.courses.model.Role
 import ru.itabrek.courses.service.UserService
 
@@ -50,6 +49,7 @@ class SecurityConfiguration(
                     .requestMatchers(HttpMethod.POST, "/course/**").hasAnyAuthority(Role.ADMIN.name)
                     .requestMatchers(HttpMethod.PUT, "/course/**").hasAnyAuthority(Role.ADMIN.name, Role.TEACHER.name)
                     .requestMatchers("/auth/**").permitAll()
+                    .requestMatchers("/media/**").permitAll()
                     .requestMatchers("/actuator/**").permitAll()
                     .requestMatchers("/health/**").permitAll()
                     .requestMatchers("/ping/**").permitAll()

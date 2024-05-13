@@ -2,6 +2,11 @@ server:
   address: 0.0.0.0
   port: 80
 spring:
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+      enabled: true
   devtools:
     livereload:
       enabled: 'false'
@@ -14,8 +19,8 @@ spring:
     password: secret
   jpa:
     hibernate:
-      ddl-auto: create-drop
-#      ddl-auto: update
+#      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -24,7 +29,7 @@ logging:
   level:
     web: DEBUG
 upload:
-  path: C:\Users\User\PycharmProjects\deepfakebot\courseback\src\main\resources\media
+  path: C:\Users\user\IdeaProjects\courseback\src\main\resources\media
 token:
   access: 53A73E5F1C4E0A2D3B5F2D784E6A1B423D6F247D1F6E5C3A596D635A7532785553A73E5F1C4E0A2D3B5F2D784E6A1B423D6F247D1F6E5C3A596D635A7532785553A73E5F1C4E0A2D3B5F2D784E6A1B423D6F247D1F6E5C3A596D635A75327855
   refresh: voU5327yQlMwfinvv2iSk2O4D6F247DF6E8teYqAeFD72tQcNL51556tSQWE5lHHZLf92qF1C4EA590A2D3B5Kzjs84EA1B423jwJfG7pHaLc5C36DtXNEN1xJk6r6t635A7kM3A73o05mv1HgXNmQ5Kzjs84EA1B423jwJfG7pHaLc5C36DtXNEN1xJk6r6t635A7kM3A73o05mv1HgXNmQ
