@@ -1,6 +1,7 @@
 package ru.itabrek.courses.entity
 
 import jakarta.persistence.*
+import org.apache.commons.lang3.mutable.Mutable
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.UpdateTimestamp
 import ru.itabrek.courses.model.Complexity
@@ -22,8 +23,8 @@ class Course(
     var teacher: User? = null,
 
     @OneToMany(cascade = [CascadeType.ALL])
-    @JoinColumn(name = "course_id", nullable = false)
-    var lessons: MutableSet<Lesson>,
+//    @JoinColumn(name = "course_id", nullable = false)
+    var lessons: MutableSet<Lesson> = mutableSetOf(),
 
     @Column(name = "complexity", nullable = false) @Enumerated(EnumType.STRING)
     var complexity: Complexity,

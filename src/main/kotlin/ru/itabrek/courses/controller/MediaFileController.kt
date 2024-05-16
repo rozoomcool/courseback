@@ -14,12 +14,12 @@ import ru.itabrek.courses.service.MediaFileService
 
 @RestController
 @RequestMapping("/media")
-class MediaController(
+class MediaFileController(
     private val mediaFileService: MediaFileService
 ) {
 
     @GetMapping
-    fun get(@RequestParam filename: String): Mono<ResponseEntity<Resource>> {
+    fun getMediaFile(@RequestParam filename: String): Mono<ResponseEntity<Resource>> {
         val resource = mediaFileService.read(filename)
         val headers: HttpHeaders = HttpHeaders()
         headers.contentType = MediaTypeFactory.getMediaType(resource).orElse(MediaType.APPLICATION_OCTET_STREAM)
@@ -27,7 +27,22 @@ class MediaController(
     }
 
     @PostMapping
-    fun post(@ModelAttribute file: MultipartFile): MediaFile {
+    fun postMediaFile(@ModelAttribute file: MultipartFile): MediaFile {
         return mediaFileService.save(file)
+    }
+
+    @PutMapping
+    fun updateMediaFile(mediaFile: MediaFile, @ModelAttribute file: MultipartFile): MediaFile {
+        return mediaFileService.update(mediaFile, file)
+    }
+
+    @DeleteMapping
+    fun deleteMediaFile(mediaFile: MediaFile): ResponseEntity<Void> {
+        try {
+            mediaFileService.delete(mediaFile)
+            return ResponseEntity.ok().build()
+        } catch (e: Exception) {
+            return ResponseEntity.notFound().build()
+        }
     }
 }
