@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service
 import ru.itabrek.courses.dto.UserDataRequest
 import ru.itabrek.courses.entity.User
 import ru.itabrek.courses.entity.UserData
+import ru.itabrek.courses.exceptions.UserNotFoundException
 import ru.itabrek.courses.repository.UserDataRepository
 import kotlin.jvm.optionals.getOrNull
 
@@ -39,12 +40,11 @@ class UserDataService(
         )
     }
 
-    fun getUserData(id: Long? = null): ResponseEntity<UserData> {
+    fun getUserData(id: Long? = null): UserData {
         if (id == null) {
-            val userData = userDataRepository.findByUser(userService.getCurrentUser())
-            return ResponseEntity(userData, if (userData != null) HttpStatus.FOUND else HttpStatus.NOT_FOUND)
+            return userDataRepository.findByUser(userService.getCurrentUser()) ?: throw UserNotFoundException("User Not Found")
         }
         val userData = userDataRepository.findById(id).getOrNull()
-        return ResponseEntity(userData, if (userData != null) HttpStatus.FOUND else HttpStatus.NOT_FOUND)
+        return userData ?: throw UserNotFoundException("User Not Found")
     }
 }
