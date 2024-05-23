@@ -34,6 +34,8 @@ dependencies {
 	testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
 	implementation("io.rest-assured:rest-assured:5.4.0")
 
+	implementation("org.modelmapper:modelmapper:3.2.0")
+
 
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
