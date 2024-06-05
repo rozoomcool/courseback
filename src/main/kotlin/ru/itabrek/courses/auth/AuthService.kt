@@ -61,7 +61,7 @@ class AuthService(
         return ResponseEntity<JwtAuthResponse>(JwtAuthResponse(access = access, refresh = refresh), HttpStatus.CREATED)
     }
 
-    fun login(request: UserRequest): UserLoginResponse {
+    fun login(request: UserRequest): JwtAuthResponse {
         logger.info("LOGIN::USER LOGIN PROCESS")
         val auth = authenticationManager.authenticate(
             UsernamePasswordAuthenticationToken(
@@ -70,13 +70,11 @@ class AuthService(
             )
         )
 
-        val userData: UserData = userDataService.getUserDataByUsername(request.username)
-
         val access = accessTokenService.generateToken(auth.principal as UserDetails)
         val refresh = refreshTokenService.generateToken(auth.principal as UserDetails)
 
         logger.info("LOGIN::USER SUCCESSFULLY LOGIN")
-        return UserLoginResponse(user = userData, access = access, refresh = refresh)
+        return JwtAuthResponse(access = access, refresh = refresh)
 
     }
 

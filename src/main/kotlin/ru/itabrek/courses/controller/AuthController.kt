@@ -24,7 +24,7 @@ class AuthController(
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
     @PostMapping("/login")
-    fun login(@RequestBody userRequest: UserRequest): ResponseEntity<UserLoginResponse> {
+    fun login(@RequestBody userRequest: UserRequest): ResponseEntity<JwtAuthResponse> {
         logger.info("AUTH/LOGIN")
         try {
             return ResponseEntity.ok(authService.login(userRequest))
