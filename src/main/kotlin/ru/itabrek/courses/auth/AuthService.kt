@@ -1,5 +1,7 @@
 package ru.itabrek.courses.auth
 
+import com.fasterxml.jackson.databind.ObjectMapper
+import org.modelmapper.ModelMapper
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
@@ -11,23 +13,26 @@ import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
-import ru.itabrek.courses.dto.JwtAuthResponse
-import ru.itabrek.courses.dto.UserCreateRequest
-import ru.itabrek.courses.dto.UserRequest
+import ru.itabrek.courses.dto.*
 import ru.itabrek.courses.entity.User
+import ru.itabrek.courses.entity.UserData
+import ru.itabrek.courses.service.UserDataService
 import ru.itabrek.courses.service.UserService
+import java.security.Principal
 
 
 @Service
 class AuthService(
     private val userService: UserService,
+    private val userDataService: UserDataService,
     private val accessTokenService: AccessTokenService,
     private val refreshTokenService: RefreshTokenService,
     private val authenticationManager: AuthenticationManager,
-    private val passwordEncoder: PasswordEncoder
+    private val passwordEncoder: PasswordEncoder,
 ) {
 
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
+    private val modelMapper: ModelMapper = ModelMapper()
 
     fun create(request: UserCreateRequest): ResponseEntity<JwtAuthResponse> {
         logger.info("CREATE::USER CREATE PROCESS")
@@ -53,34 +58,25 @@ class AuthService(
         val refresh = refreshTokenService.generateToken(user)
 
         logger.info("CREATE::USER SUCCESSFULLY CREATED")
-        return ResponseEntity<JwtAuthResponse>(JwtAuthResponse(access, refresh), HttpStatus.CREATED)
+        return ResponseEntity<JwtAuthResponse>(JwtAuthResponse(access = access, refresh = refresh), HttpStatus.CREATED)
     }
 
-    fun login(request: UserRequest): ResponseEntity<JwtAuthResponse> {
+    fun login(request: UserRequest): UserLoginResponse {
         logger.info("LOGIN::USER LOGIN PROCESS")
-        try {
-            val auth = authenticationManager.authenticate(
-                UsernamePasswordAuthenticationToken(
-                    request.username,
-                    request.password
-                )
+        val auth = authenticationManager.authenticate(
+            UsernamePasswordAuthenticationToken(
+                request.username,
+                request.password
             )
+        )
 
-            val access = accessTokenService.generateToken(auth.principal as UserDetails)
-            val refresh = refreshTokenService.generateToken(auth.principal as UserDetails)
+        val userData: UserData = userDataService.getUserDataByUsername(request.username)
 
-            logger.info("LOGIN::USER SUCCESSFULLY LOGIN")
-            return ResponseEntity(JwtAuthResponse(access, refresh), HttpStatus.OK)
-        } catch (e: UsernameNotFoundException) {
-            logger.info("LOGIN::USER NOT FOUND EXCEPTION: $e")
-            return ResponseEntity(null, HttpStatus.NOT_FOUND)
-        }catch (e: AuthenticationException) {
-            logger.info("LOGIN::AUTHENTICATION EXCEPTION: $e")
-            return ResponseEntity(null, HttpStatus.BAD_REQUEST)
-        } catch (e: Exception) {
-            logger.info("LOGIN::UNEXPECTED ERROR: $e")
-            return ResponseEntity(null, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+        val access = accessTokenService.generateToken(auth.principal as UserDetails)
+        val refresh = refreshTokenService.generateToken(auth.principal as UserDetails)
+
+        logger.info("LOGIN::USER SUCCESSFULLY LOGIN")
+        return UserLoginResponse(user = userData, access = access, refresh = refresh)
 
     }
 
@@ -98,6 +94,6 @@ class AuthService(
         val newRefresh = refreshTokenService.generateToken(user)
 
         logger.info("REFRESH::BAD_REQUEST REFRESH PROCESS SUCCESSFUL")
-        return ResponseEntity<JwtAuthResponse>(JwtAuthResponse(newAccess, newRefresh), HttpStatus.OK)
+        return ResponseEntity<JwtAuthResponse>(JwtAuthResponse(access = newAccess, refresh = newRefresh), HttpStatus.OK)
     }
 }

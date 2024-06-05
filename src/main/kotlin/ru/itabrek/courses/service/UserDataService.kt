@@ -47,4 +47,12 @@ class UserDataService(
         val userData = userDataRepository.findById(id).getOrNull()
         return userData ?: throw UserNotFoundException("User Not Found")
     }
+
+    fun getUserDataByUsername(username: String? = null): UserData {
+        if (username == null) {
+            return userDataRepository.findByUser(userService.getCurrentUser()) ?: throw UserNotFoundException("User Not Found")
+        }
+        val userData = userDataRepository.findByUserUsername(username)
+        return userData ?: throw UserNotFoundException("User Not Found")
+    }
 }

@@ -35,7 +35,7 @@ class UserService(
         return userRepository.existsByUsername(username)
     }
 
-    private fun findByUsername(username: String): User {
+    fun findByUsername(username: String): User {
         return userRepository.findByUsername(username) ?: throw UsernameNotFoundException("User not found")
     }
 

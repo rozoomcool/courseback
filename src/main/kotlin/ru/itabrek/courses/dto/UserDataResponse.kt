@@ -3,7 +3,7 @@ package ru.itabrek.courses.dto
 import org.apache.logging.log4j.util.StringMap
 import java.util.Date
 
-data class UserDataResponse(
+class UserDataResponse(
     val user: UserResponse,
     val firstname: String,
     val lastname: String,

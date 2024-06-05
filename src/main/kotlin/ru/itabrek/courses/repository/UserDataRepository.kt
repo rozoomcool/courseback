@@ -8,4 +8,5 @@ import ru.itabrek.courses.entity.UserData
 @Repository
 interface UserDataRepository: CrudRepository<UserData, Long> {
     fun findByUser(user: User): UserData?
+    fun findByUserUsername(userName: String): UserData?
 }

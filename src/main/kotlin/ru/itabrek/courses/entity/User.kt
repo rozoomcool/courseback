@@ -19,7 +19,7 @@ class User(
     @Column(name = "username", unique = true, nullable = false) @JvmField
     var username: String,
 
-    @Column(name = "password", nullable = false) @JvmField
+    @JsonIgnore @Column(name = "password", nullable = false) @JvmField
     var password: String,
 
     @Column(name = "role", nullable = false) @Enumerated(value = EnumType.STRING)

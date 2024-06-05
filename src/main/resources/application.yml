@@ -13,9 +13,9 @@ spring:
   application:
     name: courses
   datasource:
-    url: jdbc:postgresql://localhost:5433/courses
+    url: jdbc:postgresql://localhost:5432/courses
     driverClassName: org.postgresql.Driver
-    username: rozoomcool
+    username: postgres
     password: secret
   jpa:
     hibernate:
