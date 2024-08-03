@@ -15,7 +15,7 @@ import ru.itabrek.courses.service.UserService
 import java.security.Principal
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("api/v1/user")
 class UserController(
     private val userService: UserService,
 ) {

@@ -20,6 +20,11 @@ class CourseService(
 
     @Transactional
     fun save(request: Course, principal: Principal): Course {
+        if (request.id == null) {
+            request.apply {
+                id = userService.findByUsername(principal.name).id
+            }
+        }
         return entityManager.merge(request)
     }
 

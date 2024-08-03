@@ -11,7 +11,7 @@ import java.util.*
 @Table(name = "course")
 class Course(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long? = null,
+    var id: Long? = null,
 
     @Column(name = "title", nullable = false)
     var title: String,
@@ -19,9 +19,7 @@ class Course(
     @Column(name = "description", columnDefinition = "TEXT", nullable = false)
     var description: String,
 
-    @ManyToOne(targetEntity = User::class)
-    @JoinColumn(name = "owner_id", nullable = false)
-    var owner: User? = null,
+    var ownerId: Long? = null,
 
     @OneToMany(cascade = [CascadeType.ALL])
 //    @JoinColumn(name = "course_id", nullable = false)
