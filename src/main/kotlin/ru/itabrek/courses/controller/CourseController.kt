@@ -25,7 +25,12 @@ class CourseController(
     @PostMapping
     fun createCourse(@RequestBody courseRequest: Course, principal: Principal): ResponseEntity<Course> {
         logger.info("COURSE/CREATE")
-        return ResponseEntity(courseService.save(courseRequest, principal), HttpStatus.CREATED)
+        try {
+            return ResponseEntity(courseService.save(courseRequest, principal), HttpStatus.CREATED)
+        } catch (e: Exception) {
+            logger.error(e.message)
+            return ResponseEntity(null, HttpStatus.BAD_REQUEST)
+        }
     }
 //
     @GetMapping
