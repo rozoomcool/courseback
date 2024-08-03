@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.stereotype.Service
 import ru.itabrek.courses.entity.User
 import ru.itabrek.courses.entity.UserData
+import ru.itabrek.courses.exceptions.UserNotFoundException
 import ru.itabrek.courses.model.Role
 import ru.itabrek.courses.repository.UserDataRepository
 import ru.itabrek.courses.repository.UserRepository
@@ -36,7 +37,7 @@ class UserService(
     }
 
     fun findByUsername(username: String): User {
-        return userRepository.findByUsername(username) ?: throw UsernameNotFoundException("User not found")
+        return userRepository.findByUsername(username) ?: throw UserNotFoundException("User not found")
     }
 
     fun userDetailsService(): UserDetailsService = UserDetailsService { username -> this.loadUserByUsername(username) }
@@ -45,6 +46,15 @@ class UserService(
 //        return SecurityContextHolder.getContext().authentication.principal as User
         val username = SecurityContextHolder.getContext().authentication.name
         return findByUsername(username)
+    }
+
+    fun updateUser(oldUser: User, user: User): User {
+        return userRepository.save(oldUser.apply {
+            firstname = user.firstname
+            lastname = user.lastname
+            surname = user.surname
+            avatar = user.avatar
+        })
     }
 
     override fun loadUserByUsername(username: String): UserDetails {

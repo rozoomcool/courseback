@@ -10,6 +10,6 @@ class Chapter(
 
     var title: String,
 
-    @OneToMany
+    @OneToMany(cascade = [CascadeType.ALL])
     var lessons: MutableList<Lesson> = mutableListOf(),
 )

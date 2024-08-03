@@ -16,15 +16,16 @@ class Course(
     @Column(name = "title", nullable = false)
     var title: String,
 
-    @Column(name = "description", nullable = false)
+    @Column(name = "description", columnDefinition = "TEXT", nullable = false)
     var description: String,
 
-    @ManyToOne(targetEntity = User::class, fetch = FetchType.LAZY)
-    var teacher: User? = null,
+    @ManyToOne(targetEntity = User::class)
+    @JoinColumn(name = "owner_id", nullable = false)
+    var owner: User? = null,
 
     @OneToMany(cascade = [CascadeType.ALL])
 //    @JoinColumn(name = "course_id", nullable = false)
-    var lessons: MutableSet<Lesson> = mutableSetOf(),
+    var chapters: MutableSet<Chapter> = mutableSetOf(),
 
     @Column(name = "complexity", nullable = false) @Enumerated(EnumType.STRING)
     var complexity: Complexity,

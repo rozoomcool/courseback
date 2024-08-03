@@ -2,8 +2,6 @@ package ru.itabrek.courses.entity
 
 import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
-import org.hibernate.annotations.OnDelete
-import org.hibernate.annotations.OnDeleteAction
 import org.hibernate.annotations.UpdateTimestamp
 import java.util.*
 
@@ -17,8 +15,11 @@ class Lesson(
     var title: String,
 
     @OneToMany(cascade = [CascadeType.ALL])
-    @JoinColumn(name = "stage_id", nullable = false)
-    var stages: MutableSet<Stage>,
+//    @JoinColumn(name = "stage_id", nullable = false)
+    var lectures: MutableSet<Lecture> = mutableSetOf(),
+
+    @OneToMany(cascade = [CascadeType.ALL])
+    var tests: MutableSet<LessonTest> = mutableSetOf(),
 
     @Column(name = "created_at", nullable = false, updatable = false) @CreationTimestamp
     val createdAt: Date? = null,

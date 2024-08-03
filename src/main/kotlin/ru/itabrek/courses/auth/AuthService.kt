@@ -34,31 +34,27 @@ class AuthService(
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
     private val modelMapper: ModelMapper = ModelMapper()
 
-    fun create(request: UserCreateRequest): ResponseEntity<JwtAuthResponse> {
+    fun create(request: UserCreateRequest): ResponseEntity<Any> {
         logger.info("CREATE::USER CREATE PROCESS")
         if (userService.userExists(request.username)) {
             logger.info("CREATE::USER ALREADY EXISTS")
-            return ResponseEntity<JwtAuthResponse>(null, HttpStatus.CONFLICT)
+            return ResponseEntity("User already exists", HttpStatus.CONFLICT)
         }
 
-        val user: User
         try {
             val userToCreate = User(
                 username = request.username,
                 password = passwordEncoder.encode(request.password),
                 role = request.role
             )
-            user = userService.create(userToCreate)
+            userService.create(userToCreate)
         } catch (e: Exception) {
             logger.info("CREATE::BAD REQUEST: $e")
-            return ResponseEntity<JwtAuthResponse>(null, HttpStatus.BAD_REQUEST)
+            return ResponseEntity("Bad request", HttpStatus.BAD_REQUEST)
         }
 
-        val access = accessTokenService.generateToken(user)
-        val refresh = refreshTokenService.generateToken(user)
-
         logger.info("CREATE::USER SUCCESSFULLY CREATED")
-        return ResponseEntity<JwtAuthResponse>(JwtAuthResponse(access = access, refresh = refresh), HttpStatus.CREATED)
+        return ResponseEntity("Successfuly created", HttpStatus.CREATED)
     }
 
     fun login(request: UserRequest): JwtAuthResponse {
@@ -72,9 +68,9 @@ class AuthService(
 
         val access = accessTokenService.generateToken(auth.principal as UserDetails)
         val refresh = refreshTokenService.generateToken(auth.principal as UserDetails)
-
+        val user: User = userService.findByUsername(request.username);
         logger.info("LOGIN::USER SUCCESSFULLY LOGIN")
-        return JwtAuthResponse(access = access, refresh = refresh)
+        return JwtAuthResponse(user = user, access = access, refresh = refresh)
 
     }
 

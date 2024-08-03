@@ -12,7 +12,7 @@ import ru.itabrek.courses.entity.UserData
 import ru.itabrek.courses.service.UserDataService
 
 @RestController
-@RequestMapping("/user/details")
+@RequestMapping("api/v1/profile")
 class UserDataController(
         private val userDataService: UserDataService,
         private val modelMapper: ModelMapper = ModelMapper()

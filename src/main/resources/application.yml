@@ -4,8 +4,8 @@ server:
 spring:
   servlet:
     multipart:
-      max-file-size: 1024MB
-      max-request-size: 1024MB
+      max-file-size: 100MB
+      max-request-size: 100MB
       enabled: true
   devtools:
     livereload:
@@ -16,7 +16,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/courses
     driverClassName: org.postgresql.Driver
     username: postgres
-    password: secret
+    password: root
   jpa:
     hibernate:
 #      ddl-auto: create-drop
@@ -29,7 +29,7 @@ logging:
   level:
     web: DEBUG
 upload:
-  path: C:\Users\user\IdeaProjects\courseback\src\main\resources\media
+  path: uploads
 token:
-  access: 53A73E5F1C4E0A2D3B5F2D784E6A1B423D6F247D1F6E5C3A596D635A7532785553A73E5F1C4E0A2D3B5F2D784E6A1B423D6F247D1F6E5C3A596D635A7532785553A73E5F1C4E0A2D3B5F2D784E6A1B423D6F247D1F6E5C3A596D635A75327855
-  refresh: voU5327yQlMwfinvv2iSk2O4D6F247DF6E8teYqAeFD72tQcNL51556tSQWE5lHHZLf92qF1C4EA590A2D3B5Kzjs84EA1B423jwJfG7pHaLc5C36DtXNEN1xJk6r6t635A7kM3A73o05mv1HgXNmQ5Kzjs84EA1B423jwJfG7pHaLc5C36DtXNEN1xJk6r6t635A7kM3A73o05mv1HgXNmQ
+  access: 3623ae4c27783afa9ef9f0d99e12f6fdc9f9167400548867bcfea85f9e5e0cf9
+  refresh: 89fd9b35f6aca3fff1bafa4eb93ff8d0fb3e16abd381efaf1677f8fd16013e19ff4b1da734e1439a1c66ec71ed729aae0212879700c17af365e06d29f8c02bf8

@@ -17,7 +17,7 @@ import ru.itabrek.courses.dto.*
 import ru.itabrek.courses.entity.User
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("api/v1/auth")
 class AuthController(
     private val authService: AuthService
 ) {
@@ -40,8 +40,8 @@ class AuthController(
         }
     }
 
-    @PostMapping("/create")
-    fun create(@RequestBody userCreateRequest: UserCreateRequest): ResponseEntity<JwtAuthResponse> {
+    @PostMapping("/register")
+    fun create(@RequestBody userCreateRequest: UserCreateRequest): ResponseEntity<Any> {
         logger.info("AUTH/CREATE")
         return authService.create(userCreateRequest)
     }

@@ -25,6 +25,15 @@ class User(
     @Column(name = "role", nullable = false) @Enumerated(value = EnumType.STRING)
     var role: Role,
 
+    @Column(name = "avatar", columnDefinition = "TEXT")
+    var avatar: String? = null,
+
+    var firstname: String? = null,
+
+    var lastname: String? = null,
+
+    var surname: String? = null,
+
     @Column(name = "created_at", nullable = false, updatable = false) @CreationTimestamp
     var createdAt: Date? = null,
 
