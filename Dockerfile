@@ -1,4 +1,4 @@
-FROM gradle:8.9.0-jdk17-focal as builder
+FROM gradle:8.6-jdk17-focal AS builder
 USER root
 WORKDIR /builder
 ADD . /builder
