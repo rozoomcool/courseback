@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.itabrek.courses.CoursesApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-04T00:42:44" hostname="DESKTOP-69GE6SK" time="0.423">
+<testsuite name="ru.itabrek.courses.CoursesApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-04T00:52:23" hostname="DESKTOP-69GE6SK" time="0.4">
   <properties/>
-  <testcase name="contextLoads()" classname="ru.itabrek.courses.CoursesApplicationTests" time="0.423"/>
+  <testcase name="contextLoads()" classname="ru.itabrek.courses.CoursesApplicationTests" time="0.4"/>
   <system-out><![CDATA[Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
-03:42:37.752 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [ru.itabrek.courses.CoursesApplicationTests]: CoursesApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-03:42:37.862 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration ru.itabrek.courses.CoursesApplication for test class ru.itabrek.courses.CoursesApplicationTests
+03:52:16.582 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [ru.itabrek.courses.CoursesApplicationTests]: CoursesApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+03:52:16.683 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration ru.itabrek.courses.CoursesApplication for test class ru.itabrek.courses.CoursesApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,19 +14,19 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.3)
 
-2024-08-04T03:42:38.348+03:00  INFO 16148 --- [courses] [    Test worker] r.i.courses.CoursesApplicationTests      : Starting CoursesApplicationTests using Java 21.0.1 with PID 16148 (started by User in C:\Users\User\Documents\_PROJECTS\JAVA\courseback)
-2024-08-04T03:42:38.349+03:00  INFO 16148 --- [courses] [    Test worker] r.i.courses.CoursesApplicationTests      : No active profile set, falling back to 1 default profile: "default"
-2024-08-04T03:42:38.579+03:00 DEBUG 16148 --- [courses] [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6293e39e
-2024-08-04T03:42:39.473+03:00  INFO 16148 --- [courses] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-08-04T03:42:39.610+03:00  INFO 16148 --- [courses] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 127 ms. Found 6 JPA repository interfaces.
-2024-08-04T03:42:40.273+03:00  INFO 16148 --- [courses] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-08-04T03:42:40.349+03:00  INFO 16148 --- [courses] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-08-04T03:42:40.382+03:00  INFO 16148 --- [courses] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-08-04T03:42:40.582+03:00  INFO 16148 --- [courses] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-08-04T03:42:40.609+03:00  INFO 16148 --- [courses] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-08-04T03:42:40.870+03:00  INFO 16148 --- [courses] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@72b53f27
-2024-08-04T03:42:40.872+03:00  INFO 16148 --- [courses] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-08-04T03:42:41.797+03:00  INFO 16148 --- [courses] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-04T03:52:17.142+03:00  INFO 13648 --- [courses] [    Test worker] r.i.courses.CoursesApplicationTests      : Starting CoursesApplicationTests using Java 21.0.1 with PID 13648 (started by User in C:\Users\User\Documents\_PROJECTS\JAVA\courseback)
+2024-08-04T03:52:17.144+03:00  INFO 13648 --- [courses] [    Test worker] r.i.courses.CoursesApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2024-08-04T03:52:17.410+03:00 DEBUG 13648 --- [courses] [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@365553de
+2024-08-04T03:52:18.372+03:00  INFO 13648 --- [courses] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-04T03:52:18.507+03:00  INFO 13648 --- [courses] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 126 ms. Found 6 JPA repository interfaces.
+2024-08-04T03:52:19.186+03:00  INFO 13648 --- [courses] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-04T03:52:19.241+03:00  INFO 13648 --- [courses] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-08-04T03:52:19.276+03:00  INFO 13648 --- [courses] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-04T03:52:19.477+03:00  INFO 13648 --- [courses] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-04T03:52:19.505+03:00  INFO 13648 --- [courses] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-04T03:52:19.652+03:00  INFO 13648 --- [courses] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1be4a7e3
+2024-08-04T03:52:19.653+03:00  INFO 13648 --- [courses] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-04T03:52:20.546+03:00  INFO 13648 --- [courses] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: 
     alter table if exists chapter_lessons 
        drop constraint if exists FK5jwsak7bk2fmf7k6osrhac9oy
@@ -304,16 +304,16 @@ Hibernate:
        add constraint FKr485y1dylmvsgld351w5r3m08 
        foreign key (id) 
        references users
-2024-08-04T03:42:41.957+03:00  INFO 16148 --- [courses] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-08-04T03:42:42.807+03:00  WARN 16148 --- [courses] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-08-04T03:42:43.079+03:00 DEBUG 16148 --- [courses] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
-2024-08-04T03:42:43.267+03:00 DEBUG 16148 --- [courses] [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-08-04T03:42:43.420+03:00  INFO 16148 --- [courses] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2024-08-04T03:42:43.516+03:00  INFO 16148 --- [courses] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2f81d7f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@265ef3d0, org.springframework.security.web.context.SecurityContextHolderFilter@e6d9c25, org.springframework.security.web.header.HeaderWriterFilter@2b208574, org.springframework.web.filter.CorsFilter@761ac810, org.springframework.security.web.authentication.logout.LogoutFilter@7528ece2, ru.itabrek.courses.auth.JwtAuthFilter@354a1239, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@71e6bac0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c6ab85, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@33212ae6, org.springframework.security.web.session.SessionManagementFilter@510c6b9, org.springframework.security.web.access.ExceptionTranslationFilter@4d619aa0, org.springframework.security.web.access.intercept.AuthorizationFilter@1405dd10]
-2024-08-04T03:42:43.782+03:00 DEBUG 16148 --- [courses] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-08-04T03:42:43.816+03:00 DEBUG 16148 --- [courses] [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-08-04T03:42:44.094+03:00  INFO 16148 --- [courses] [    Test worker] r.i.courses.CoursesApplicationTests      : Started CoursesApplicationTests in 6.049 seconds (process running for 7.285)
-2024-08-04T03:42:44.166+03:00  INFO 16148 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER CREATE PROCESS
+2024-08-04T03:52:20.693+03:00  INFO 13648 --- [courses] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-04T03:52:21.537+03:00  WARN 13648 --- [courses] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-04T03:52:21.829+03:00 DEBUG 13648 --- [courses] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2024-08-04T03:52:22.006+03:00 DEBUG 13648 --- [courses] [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-04T03:52:22.170+03:00  INFO 13648 --- [courses] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-08-04T03:52:22.247+03:00  INFO 13648 --- [courses] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4bd1541f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78f18a87, org.springframework.security.web.context.SecurityContextHolderFilter@27d38370, org.springframework.security.web.header.HeaderWriterFilter@6f34d178, org.springframework.web.filter.CorsFilter@77b6d94c, org.springframework.security.web.authentication.logout.LogoutFilter@1088b120, ru.itabrek.courses.auth.JwtAuthFilter@6cd31e5f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7cb9295f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18ea9bec, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5b51a4c7, org.springframework.security.web.session.SessionManagementFilter@334d96af, org.springframework.security.web.access.ExceptionTranslationFilter@4ad113d6, org.springframework.security.web.access.intercept.AuthorizationFilter@77cf9b08]
+2024-08-04T03:52:22.500+03:00 DEBUG 13648 --- [courses] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-04T03:52:22.532+03:00 DEBUG 13648 --- [courses] [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-04T03:52:22.816+03:00  INFO 13648 --- [courses] [    Test worker] r.i.courses.CoursesApplicationTests      : Started CoursesApplicationTests in 5.963 seconds (process running for 7.078)
+2024-08-04T03:52:22.888+03:00  INFO 13648 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER CREATE PROCESS
 Hibernate: 
     select
         u1_0.id 
@@ -337,8 +337,8 @@ Hibernate:
         (created_at, date_of_birth, firstname, lastname, phone, updated_at, id) 
     values
         (?, ?, ?, ?, ?, ?, ?)
-2024-08-04T03:42:44.383+03:00  INFO 16148 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER SUCCESSFULLY CREATED
-2024-08-04T03:42:44.385+03:00  INFO 16148 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER CREATE PROCESS
+2024-08-04T03:52:23.116+03:00  INFO 13648 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER SUCCESSFULLY CREATED
+2024-08-04T03:52:23.118+03:00  INFO 13648 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER CREATE PROCESS
 Hibernate: 
     select
         u1_0.id 
@@ -362,8 +362,8 @@ Hibernate:
         (created_at, date_of_birth, firstname, lastname, phone, updated_at, id) 
     values
         (?, ?, ?, ?, ?, ?, ?)
-2024-08-04T03:42:44.446+03:00  INFO 16148 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER SUCCESSFULLY CREATED
-2024-08-04T03:42:44.446+03:00  INFO 16148 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER CREATE PROCESS
+2024-08-04T03:52:23.179+03:00  INFO 13648 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER SUCCESSFULLY CREATED
+2024-08-04T03:52:23.179+03:00  INFO 13648 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER CREATE PROCESS
 Hibernate: 
     select
         u1_0.id 
@@ -387,7 +387,7 @@ Hibernate:
         (created_at, date_of_birth, firstname, lastname, phone, updated_at, id) 
     values
         (?, ?, ?, ?, ?, ?, ?)
-2024-08-04T03:42:44.507+03:00  INFO 16148 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER SUCCESSFULLY CREATED
+2024-08-04T03:52:23.239+03:00  INFO 13648 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER SUCCESSFULLY CREATED
 ]]></system-out>
   <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\User\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.12\be4984cb6fd1ef1d11f218a648889dfda44b8a15\byte-buddy-agent-1.14.12.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning

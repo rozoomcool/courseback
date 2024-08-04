@@ -38,7 +38,7 @@ class AuthService(
         logger.info("CREATE::USER CREATE PROCESS")
         if (userService.userExists(request.username)) {
             logger.info("CREATE::USER ALREADY EXISTS")
-            return ResponseEntity("User already exists", HttpStatus.CONFLICT)
+            return ResponseEntity(null, HttpStatus.CONFLICT)
         }
 
         try {
@@ -50,11 +50,11 @@ class AuthService(
             userService.create(userToCreate)
         } catch (e: Exception) {
             logger.info("CREATE::BAD REQUEST: $e")
-            return ResponseEntity("Bad request", HttpStatus.BAD_REQUEST)
+            return ResponseEntity(null, HttpStatus.BAD_REQUEST)
         }
 
         logger.info("CREATE::USER SUCCESSFULLY CREATED")
-        return ResponseEntity("Successfuly created", HttpStatus.CREATED)
+        return ResponseEntity(null, HttpStatus.CREATED)
     }
 
     fun login(request: UserRequest): JwtAuthResponse {
