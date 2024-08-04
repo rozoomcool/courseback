@@ -68,5 +68,5 @@ class AccessTokenService {
     }
 
     private val signingKey: SecretKey
-        private get() = Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSigningKey))
+        get() = Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSigningKey))
 }

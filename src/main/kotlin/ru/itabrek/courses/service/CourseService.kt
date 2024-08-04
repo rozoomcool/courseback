@@ -32,6 +32,10 @@ class CourseService(
         return courseRepository.findAll()
     }
 
+    fun deleteCourse(id: Long) {
+        courseRepository.deleteById(id)
+    }
+
     fun getById(id: Long): Course? {
         return courseRepository.findById(id).getOrNull()
     }
