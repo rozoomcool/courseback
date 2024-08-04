@@ -10,6 +10,5 @@ class LessonTest (
     var id: Long? = null,
     var question: String,
     @OneToMany(cascade = [CascadeType.ALL])
-    var variants: Set<QuestionVariant> = mutableSetOf(),
-    var answerId: Long
+    var variants: Set<QuestionVariant> = mutableSetOf()
 )

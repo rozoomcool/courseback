@@ -7,5 +7,6 @@ import jakarta.persistence.*
 class QuestionVariant(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
-    var variant: String
+    var variant: String,
+    var isAnswer: Boolean
 )
