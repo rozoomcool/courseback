@@ -23,9 +23,9 @@ class UserController(
     private val modelMapper: ModelMapper = ModelMapper()
 
     @GetMapping
-    fun getUser(): ResponseEntity<UserResponse> {
+    fun getUser(): ResponseEntity<User> {
         logger.info("USER/GET_USER")
-        return ResponseEntity.ok(modelMapper.map(userService.getCurrentUser(), UserResponse::class.java))
+        return ResponseEntity.ok(userService.getCurrentUser())
     }
 
     @GetMapping("/all")

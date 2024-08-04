@@ -24,6 +24,9 @@ class Course(
     @Column(name="preview", columnDefinition = "TEXT")
     var preview: String? = null,
 
+    @ManyToMany
+    var participants: MutableSet<User> = mutableSetOf(),
+
     @OneToMany(cascade = [CascadeType.ALL])
 //    @JoinColumn(name = "course_id", nullable = false)
     var chapters: MutableSet<Chapter> = mutableSetOf(),
