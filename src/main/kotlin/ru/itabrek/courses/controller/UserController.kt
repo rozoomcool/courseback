@@ -39,7 +39,7 @@ class UserController(
         logger.info("USER/UPDATE")
         try {
             val oldUser = userService.findByUsername(principal.name)
-            if (oldUser.username == user.username) {
+            if (oldUser.username != user.username) {
                 return ResponseEntity(null, HttpStatus.FORBIDDEN)
             }
             return ResponseEntity.ok(userService.updateUser(oldUser, user))

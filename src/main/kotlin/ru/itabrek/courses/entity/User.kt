@@ -20,7 +20,7 @@ class User(
     var username: String,
 
     @JsonIgnore @Column(name = "password", nullable = false) @JvmField
-    var password: String,
+    var password: String?,
 
     @Column(name = "role", nullable = false) @Enumerated(value = EnumType.STRING)
     var role: Role,
@@ -46,7 +46,7 @@ class User(
     }
 
     override fun getPassword(): String {
-        return password
+        return password!!
     }
 
     override fun getUsername(): String {
