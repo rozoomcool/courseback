@@ -44,6 +44,7 @@ class UserController(
             }
             return ResponseEntity.ok(userService.updateUser(oldUser, user))
         } catch (e: Exception) {
+            logger.error(e.message)
             return ResponseEntity(null, HttpStatus.NOT_FOUND)
         }
     }
