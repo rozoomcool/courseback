@@ -21,7 +21,7 @@ WORKDIR /app
 COPY build/libs/courses-0.0.1-SNAPSHOT.jar app.jar
 
 # Устанавливаем переменные окружения для Java
-ENV JAVA_OPTS=""
+ENV JAVA_OPTS="-Xms512m -Xmx2g"
 
 # Открываем порт для приложения
 EXPOSE 8080
