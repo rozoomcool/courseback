@@ -18,7 +18,7 @@ class AccessTokenService {
     @Value("\${token.access}")
     private val jwtSigningKey: String? = null
     companion object {
-        private const val ACCESS_EXPIRATION: Long = 60 * 24 * 1000 * 1000
+        private const val ACCESS_EXPIRATION: Long = 1000000000
     }
 
     fun extractUsername(token: String): String {

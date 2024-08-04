@@ -28,6 +28,9 @@ class User(
     @Column(name = "avatar", columnDefinition = "TEXT")
     var avatar: String? = null,
 
+    @Column(name = "about", columnDefinition = "TEXT")
+    var about: String? = null,
+
     var firstname: String? = null,
 
     var lastname: String? = null,

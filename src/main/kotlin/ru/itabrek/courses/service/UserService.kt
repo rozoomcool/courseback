@@ -59,6 +59,7 @@ class UserService(
             lastname = user.lastname
             surname = user.surname
             avatar = user.avatar
+            about = user.about
         }
         return userRepository.save(entity)
     }

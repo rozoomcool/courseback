@@ -32,7 +32,7 @@ class CourseController(
             return ResponseEntity(null, HttpStatus.BAD_REQUEST)
         }
     }
-//
+
     @GetMapping
     fun getAllCourses(): ResponseEntity<Iterable<Course>> {
         logger.info("COURSE/GET_ALL")
