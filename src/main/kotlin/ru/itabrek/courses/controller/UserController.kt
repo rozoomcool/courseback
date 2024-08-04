@@ -5,10 +5,7 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PutMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import ru.itabrek.courses.dto.UserResponse
 import ru.itabrek.courses.dto.UserUpdateDto
 import ru.itabrek.courses.entity.User
@@ -30,13 +27,20 @@ class UserController(
     }
 
     @GetMapping("/all")
-    fun getAll(): ResponseEntity<UserResponse> {
+    fun getAll(): ResponseEntity<Iterable<User>> {
         logger.info("USER/GET_ALL")
-        return ResponseEntity.ok(modelMapper.map(userService.getCurrentUser(), UserResponse::class.java))
+        return ResponseEntity.ok(userService.getAll())
+    }
+
+    @GetMapping("/{id}")
+    fun getAll(@PathVariable id: Long): ResponseEntity<User> {
+        logger.info("USER/GET_ALL")
+        val user = userService.getById(id) ?: return ResponseEntity.notFound().build()
+        return ResponseEntity.ok(user)
     }
 
     @PutMapping()
-    fun update(user: UserUpdateDto, principal: Principal): ResponseEntity<User> {
+    fun update(@RequestBody user: UserUpdateDto, principal: Principal): ResponseEntity<User> {
         logger.info("USER/UPDATE")
         try {
             val oldUser = userService.findByUsername(principal.name)

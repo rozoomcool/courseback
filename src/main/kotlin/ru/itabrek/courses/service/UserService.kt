@@ -13,6 +13,7 @@ import ru.itabrek.courses.exceptions.UserNotFoundException
 import ru.itabrek.courses.model.Role
 import ru.itabrek.courses.repository.UserDataRepository
 import ru.itabrek.courses.repository.UserRepository
+import kotlin.jvm.optionals.getOrNull
 
 @Service
 class UserService(
@@ -37,6 +38,14 @@ class UserService(
         return userRepository.existsByUsername(username)
     }
 
+    fun getAll(): Iterable<User> {
+        return userRepository.findAll()
+    }
+
+    fun getById(id: Long): User? {
+        return userRepository.findById(id).getOrNull()
+    }
+
     fun findByUsername(username: String): User {
         return userRepository.findByUsername(username) ?: throw UserNotFoundException("User not found")
     }
@@ -50,12 +59,13 @@ class UserService(
     }
 
     fun updateUser(oldUser: User, user: UserUpdateDto): User {
-        return userRepository.save(oldUser.apply {
+        val entity = oldUser.apply {
             firstname = user.firstname
             lastname = user.lastname
             surname = user.surname
             avatar = user.avatar
-        })
+        }
+        return userRepository.save(entity)
     }
 
     override fun loadUserByUsername(username: String): UserDetails {
