@@ -43,7 +43,7 @@ class CourseController(
     @DeleteMapping("/{id}")
     fun deleteById(@PathVariable id: Long): ResponseEntity<Any> {
         try {
-            courseService.getAllCourses()
+            courseService.deleteCourse(id)
             return ResponseEntity.ok().build()
         } catch (e: Exception) {
             logger.error(e.message)

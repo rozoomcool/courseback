@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.itabrek.courses.CoursesApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-04T07:47:14" hostname="DESKTOP-69GE6SK" time="0.41">
+<testsuite name="ru.itabrek.courses.CoursesApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-04T08:57:33" hostname="DESKTOP-69GE6SK" time="0.423">
   <properties/>
-  <testcase name="contextLoads()" classname="ru.itabrek.courses.CoursesApplicationTests" time="0.41"/>
+  <testcase name="contextLoads()" classname="ru.itabrek.courses.CoursesApplicationTests" time="0.423"/>
   <system-out><![CDATA[Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
-10:47:07.469 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [ru.itabrek.courses.CoursesApplicationTests]: CoursesApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-10:47:07.549 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration ru.itabrek.courses.CoursesApplication for test class ru.itabrek.courses.CoursesApplicationTests
+11:57:26.790 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [ru.itabrek.courses.CoursesApplicationTests]: CoursesApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:57:26.871 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration ru.itabrek.courses.CoursesApplication for test class ru.itabrek.courses.CoursesApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,100 +14,166 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.3)
 
-2024-08-04T10:47:07.936+03:00  INFO 9856 --- [courses] [    Test worker] r.i.courses.CoursesApplicationTests      : Starting CoursesApplicationTests using Java 21.0.1 with PID 9856 (started by User in C:\Users\User\Documents\_PROJECTS\JAVA\courseback)
-2024-08-04T10:47:07.937+03:00  INFO 9856 --- [courses] [    Test worker] r.i.courses.CoursesApplicationTests      : No active profile set, falling back to 1 default profile: "default"
-2024-08-04T10:47:08.157+03:00 DEBUG 9856 --- [courses] [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6293e39e
-2024-08-04T10:47:09.046+03:00  INFO 9856 --- [courses] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-08-04T10:47:09.194+03:00  INFO 9856 --- [courses] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 141 ms. Found 9 JPA repository interfaces.
-2024-08-04T10:47:09.866+03:00  INFO 9856 --- [courses] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-08-04T10:47:09.927+03:00  INFO 9856 --- [courses] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-08-04T10:47:09.964+03:00  INFO 9856 --- [courses] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-08-04T10:47:10.167+03:00  INFO 9856 --- [courses] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-08-04T10:47:10.189+03:00  INFO 9856 --- [courses] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-08-04T10:47:10.358+03:00  INFO 9856 --- [courses] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@34065642
-2024-08-04T10:47:10.360+03:00  INFO 9856 --- [courses] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-08-04T10:47:11.221+03:00  INFO 9856 --- [courses] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-04T11:57:27.260+03:00  INFO 4492 --- [courses] [    Test worker] r.i.courses.CoursesApplicationTests      : Starting CoursesApplicationTests using Java 21.0.1 with PID 4492 (started by User in C:\Users\User\Documents\_PROJECTS\JAVA\courseback)
+2024-08-04T11:57:27.261+03:00  INFO 4492 --- [courses] [    Test worker] r.i.courses.CoursesApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2024-08-04T11:57:27.494+03:00 DEBUG 4492 --- [courses] [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6293e39e
+2024-08-04T11:57:28.391+03:00  INFO 4492 --- [courses] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-04T11:57:28.536+03:00  INFO 4492 --- [courses] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 139 ms. Found 9 JPA repository interfaces.
+2024-08-04T11:57:29.200+03:00  INFO 4492 --- [courses] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-04T11:57:29.264+03:00  INFO 4492 --- [courses] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-08-04T11:57:29.298+03:00  INFO 4492 --- [courses] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-04T11:57:29.493+03:00  INFO 4492 --- [courses] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-04T11:57:29.514+03:00  INFO 4492 --- [courses] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-04T11:57:29.771+03:00  INFO 4492 --- [courses] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@63551c66
+2024-08-04T11:57:29.772+03:00  INFO 4492 --- [courses] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-04T11:57:30.685+03:00  INFO 4492 --- [courses] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: 
     alter table if exists chapter_lessons 
        drop constraint if exists FK5jwsak7bk2fmf7k6osrhac9oy
+2024-08-04T11:57:30.705+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.705+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "chapter_lessons" не существует, пропускается
 Hibernate: 
     alter table if exists chapter_lessons 
        drop constraint if exists FKadynyhddj4hegy2wj9up4yarc
+2024-08-04T11:57:30.706+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.706+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "chapter_lessons" не существует, пропускается
 Hibernate: 
     alter table if exists course_chapters 
        drop constraint if exists FKojtxjn21ucs2njekvr7yq5386
+2024-08-04T11:57:30.707+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.707+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "course_chapters" не существует, пропускается
 Hibernate: 
     alter table if exists course_chapters 
        drop constraint if exists FK2gwo9femvx1gnsx18rpatwwo8
+2024-08-04T11:57:30.708+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.708+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "course_chapters" не существует, пропускается
 Hibernate: 
     alter table if exists course_participants 
        drop constraint if exists FKm16sm12uybforp9in1v8f3s28
+2024-08-04T11:57:30.709+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.709+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "course_participants" не существует, пропускается
 Hibernate: 
     alter table if exists course_participants 
        drop constraint if exists FK8dvnj6ef9lwhi2xo4orhev83i
+2024-08-04T11:57:30.710+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.710+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "course_participants" не существует, пропускается
 Hibernate: 
     alter table if exists lesson_lectures 
        drop constraint if exists FK8frtbgd6234dux3jkwvmtrcjp
+2024-08-04T11:57:30.711+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.711+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "lesson_lectures" не существует, пропускается
 Hibernate: 
     alter table if exists lesson_lectures 
        drop constraint if exists FK6t3mut45onedkkwhkt6n3re92
+2024-08-04T11:57:30.711+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.711+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "lesson_lectures" не существует, пропускается
 Hibernate: 
     alter table if exists lesson_tests 
        drop constraint if exists FKoce2teincnbfpgidcwdch679q
+2024-08-04T11:57:30.712+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.712+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "lesson_tests" не существует, пропускается
 Hibernate: 
     alter table if exists lesson_tests 
        drop constraint if exists FKoaoh31qo23g1at5ui6ud0m0na
+2024-08-04T11:57:30.713+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.713+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "lesson_tests" не существует, пропускается
 Hibernate: 
     alter table if exists lesson_test_variants 
        drop constraint if exists FK4ig81l2rua896pcf2p0gul12f
+2024-08-04T11:57:30.714+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.714+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "lesson_test_variants" не существует, пропускается
 Hibernate: 
     alter table if exists lesson_test_variants 
        drop constraint if exists FKgmjic9tom61r8inbclwpmehhf
+2024-08-04T11:57:30.715+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.715+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "lesson_test_variants" не существует, пропускается
 Hibernate: 
     alter table if exists "media_group_medias" 
        drop constraint if exists FK96wjey34q8m2l0c8cl9s7a1x7
+2024-08-04T11:57:30.716+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.716+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "media_group_medias" не существует, пропускается
 Hibernate: 
     alter table if exists "media_group_medias" 
        drop constraint if exists FK3pu4sq4rnxf2tt9irdb3gsqrt
+2024-08-04T11:57:30.717+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.717+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "media_group_medias" не существует, пропускается
 Hibernate: 
     alter table if exists user_data 
        drop constraint if exists FKr485y1dylmvsgld351w5r3m08
+2024-08-04T11:57:30.718+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.718+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "user_data" не существует, пропускается
 Hibernate: 
     drop table if exists chapter cascade
+2024-08-04T11:57:30.719+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.719+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "chapter" не существует, пропускается
 Hibernate: 
     drop table if exists chapter_lessons cascade
+2024-08-04T11:57:30.720+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.720+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "chapter_lessons" не существует, пропускается
 Hibernate: 
     drop table if exists course cascade
+2024-08-04T11:57:30.721+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.721+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "course" не существует, пропускается
 Hibernate: 
     drop table if exists course_chapters cascade
+2024-08-04T11:57:30.722+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.722+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "course_chapters" не существует, пропускается
 Hibernate: 
     drop table if exists course_participants cascade
+2024-08-04T11:57:30.723+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.723+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "course_participants" не существует, пропускается
 Hibernate: 
     drop table if exists course_progress cascade
+2024-08-04T11:57:30.723+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.724+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "course_progress" не существует, пропускается
 Hibernate: 
     drop table if exists lecture cascade
+2024-08-04T11:57:30.724+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.725+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "lecture" не существует, пропускается
 Hibernate: 
     drop table if exists lesson cascade
+2024-08-04T11:57:30.725+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.725+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "lesson" не существует, пропускается
 Hibernate: 
     drop table if exists lesson_lectures cascade
+2024-08-04T11:57:30.726+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.726+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "lesson_lectures" не существует, пропускается
 Hibernate: 
     drop table if exists lesson_tests cascade
+2024-08-04T11:57:30.726+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.726+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "lesson_tests" не существует, пропускается
 Hibernate: 
     drop table if exists lesson_test cascade
+2024-08-04T11:57:30.727+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.727+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "lesson_test" не существует, пропускается
 Hibernate: 
     drop table if exists lesson_test_variants cascade
+2024-08-04T11:57:30.728+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.728+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "lesson_test_variants" не существует, пропускается
 Hibernate: 
     drop table if exists "media-file" cascade
+2024-08-04T11:57:30.729+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.729+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "media-file" не существует, пропускается
 Hibernate: 
     drop table if exists media_group cascade
+2024-08-04T11:57:30.730+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.730+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "media_group" не существует, пропускается
 Hibernate: 
     drop table if exists "media_group_medias" cascade
+2024-08-04T11:57:30.730+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.730+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "media_group_medias" не существует, пропускается
 Hibernate: 
     drop table if exists question_variant cascade
+2024-08-04T11:57:30.731+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.731+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "question_variant" не существует, пропускается
 Hibernate: 
     drop table if exists user_data cascade
+2024-08-04T11:57:30.732+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.732+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "user_data" не существует, пропускается
 Hibernate: 
     drop table if exists users cascade
+2024-08-04T11:57:30.732+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-04T11:57:30.732+03:00  WARN 4492 --- [courses] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "users" не существует, пропускается
 Hibernate: 
     create table chapter (
         id bigserial not null,
@@ -316,16 +382,16 @@ Hibernate:
        add constraint FKr485y1dylmvsgld351w5r3m08 
        foreign key (id) 
        references users
-2024-08-04T10:47:11.414+03:00  INFO 9856 --- [courses] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-08-04T10:47:12.340+03:00  WARN 9856 --- [courses] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-08-04T10:47:12.632+03:00 DEBUG 9856 --- [courses] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
-2024-08-04T10:47:12.790+03:00 DEBUG 9856 --- [courses] [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-08-04T10:47:12.968+03:00  INFO 9856 --- [courses] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2024-08-04T10:47:13.031+03:00  INFO 9856 --- [courses] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@36573ec5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10c26161, org.springframework.security.web.context.SecurityContextHolderFilter@754acbad, org.springframework.security.web.header.HeaderWriterFilter@75583206, org.springframework.web.filter.CorsFilter@1ef6977b, org.springframework.security.web.authentication.logout.LogoutFilter@178cfe5e, ru.itabrek.courses.auth.JwtAuthFilter@8ae7e03, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f2d0d25, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@724d4e75, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@674cd2da, org.springframework.security.web.session.SessionManagementFilter@79d31e24, org.springframework.security.web.access.ExceptionTranslationFilter@2139aa1f, org.springframework.security.web.access.intercept.AuthorizationFilter@1d628a88]
-2024-08-04T10:47:13.253+03:00 DEBUG 9856 --- [courses] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-08-04T10:47:13.284+03:00 DEBUG 9856 --- [courses] [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-08-04T10:47:13.620+03:00  INFO 9856 --- [courses] [    Test worker] r.i.courses.CoursesApplicationTests      : Started CoursesApplicationTests in 5.931 seconds (process running for 7.03)
-2024-08-04T10:47:13.693+03:00  INFO 9856 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER CREATE PROCESS
+2024-08-04T11:57:30.848+03:00  INFO 4492 --- [courses] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-04T11:57:31.818+03:00  WARN 4492 --- [courses] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-04T11:57:32.146+03:00 DEBUG 4492 --- [courses] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2024-08-04T11:57:32.329+03:00 DEBUG 4492 --- [courses] [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-04T11:57:32.513+03:00  INFO 4492 --- [courses] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-08-04T11:57:32.580+03:00  INFO 4492 --- [courses] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@34d776eb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60a3a0fa, org.springframework.security.web.context.SecurityContextHolderFilter@50d8b30, org.springframework.security.web.header.HeaderWriterFilter@79753f20, org.springframework.web.filter.CorsFilter@17734113, org.springframework.security.web.authentication.logout.LogoutFilter@78167, ru.itabrek.courses.auth.JwtAuthFilter@27103726, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@189fe8af, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b5769b3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@27aa700, org.springframework.security.web.session.SessionManagementFilter@1871068d, org.springframework.security.web.access.ExceptionTranslationFilter@7061a5e7, org.springframework.security.web.access.intercept.AuthorizationFilter@29cd48bd]
+2024-08-04T11:57:32.804+03:00 DEBUG 4492 --- [courses] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-04T11:57:32.836+03:00 DEBUG 4492 --- [courses] [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-04T11:57:33.197+03:00  INFO 4492 --- [courses] [    Test worker] r.i.courses.CoursesApplicationTests      : Started CoursesApplicationTests in 6.184 seconds (process running for 7.188)
+2024-08-04T11:57:33.285+03:00  INFO 4492 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER CREATE PROCESS
 Hibernate: 
     select
         u1_0.id 
@@ -342,8 +408,8 @@ Hibernate:
         (about, avatar, created_at, firstname, lastname, password, role, surname, updated_at, username) 
     values
         (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-2024-08-04T10:47:13.903+03:00  INFO 9856 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER SUCCESSFULLY CREATED
-2024-08-04T10:47:13.905+03:00  INFO 9856 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER CREATE PROCESS
+2024-08-04T11:57:33.506+03:00  INFO 4492 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER SUCCESSFULLY CREATED
+2024-08-04T11:57:33.509+03:00  INFO 4492 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER CREATE PROCESS
 Hibernate: 
     select
         u1_0.id 
@@ -360,8 +426,8 @@ Hibernate:
         (about, avatar, created_at, firstname, lastname, password, role, surname, updated_at, username) 
     values
         (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-2024-08-04T10:47:13.965+03:00  INFO 9856 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER SUCCESSFULLY CREATED
-2024-08-04T10:47:13.965+03:00  INFO 9856 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER CREATE PROCESS
+2024-08-04T11:57:33.569+03:00  INFO 4492 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER SUCCESSFULLY CREATED
+2024-08-04T11:57:33.569+03:00  INFO 4492 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER CREATE PROCESS
 Hibernate: 
     select
         u1_0.id 
@@ -378,7 +444,7 @@ Hibernate:
         (about, avatar, created_at, firstname, lastname, password, role, surname, updated_at, username) 
     values
         (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-2024-08-04T10:47:14.024+03:00  INFO 9856 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER SUCCESSFULLY CREATED
+2024-08-04T11:57:33.629+03:00  INFO 4492 --- [courses] [    Test worker] ru.itabrek.courses.auth.AuthService      : CREATE::USER SUCCESSFULLY CREATED
 ]]></system-out>
   <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\User\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.12\be4984cb6fd1ef1d11f218a648889dfda44b8a15\byte-buddy-agent-1.14.12.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
