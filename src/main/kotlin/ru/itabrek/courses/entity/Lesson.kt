@@ -11,7 +11,7 @@ class Lesson(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
 
-    @Column(name = "title", nullable = false)
+    @Column(name = "title", nullable = false, columnDefinition = "TEXT")
     var title: String,
 
     @OneToMany(cascade = [CascadeType.ALL])

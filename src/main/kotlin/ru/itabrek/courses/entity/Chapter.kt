@@ -7,7 +7,7 @@ import jakarta.persistence.*
 class Chapter(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
-
+    @Column(name = "title", nullable = false, columnDefinition = "TEXT")
     var title: String,
 
     @OneToMany(cascade = [CascadeType.ALL])

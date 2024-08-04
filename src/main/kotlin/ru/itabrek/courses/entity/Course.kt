@@ -13,7 +13,7 @@ class Course(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
 
-    @Column(name = "title", nullable = false)
+    @Column(name = "title", nullable = false, columnDefinition = "TEXT")
     var title: String,
 
     @Column(name = "description", columnDefinition = "TEXT", nullable = false)

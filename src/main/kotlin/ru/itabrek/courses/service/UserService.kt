@@ -8,17 +8,13 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.stereotype.Service
 import ru.itabrek.courses.dto.UserUpdateDto
 import ru.itabrek.courses.entity.User
-import ru.itabrek.courses.entity.UserData
 import ru.itabrek.courses.exceptions.UserNotFoundException
-import ru.itabrek.courses.model.Role
-import ru.itabrek.courses.repository.UserDataRepository
 import ru.itabrek.courses.repository.UserRepository
 import kotlin.jvm.optionals.getOrNull
 
 @Service
 class UserService(
-    private val userRepository: UserRepository,
-    private val userDataRepository: UserDataRepository
+    private val userRepository: UserRepository
 ): UserDetailsService {
 
     @Transactional
@@ -29,7 +25,6 @@ class UserService(
             role = user.role
         )
         val saved = userRepository.save(userToSave)
-        userDataRepository.save(UserData(user = saved))
 
         return saved
     }
