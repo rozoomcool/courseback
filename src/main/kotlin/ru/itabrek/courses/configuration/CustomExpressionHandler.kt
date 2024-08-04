@@ -22,16 +22,16 @@ class CustomExceptionHandler : ResponseEntityExceptionHandler() {
         return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED).body("Method Not Allowed")
     }
 
-    @ExceptionHandler(value = [AccessDeniedException::class])
-    @ResponseStatus(HttpStatus.FORBIDDEN)
-    protected fun handleAccessDeniedException(ex: AccessDeniedException?, request: WebRequest?): ResponseEntity<Any> {
-        return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access Denied")
-    }
-
-    @ExceptionHandler(value = [Exception::class])
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    protected fun handleInternalServerError(ex: Exception?, request: WebRequest?): ResponseEntity<Any> {
-        println(ex?.message);
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error")
-    }
+//    @ExceptionHandler(value = [AccessDeniedException::class])
+//    @ResponseStatus(HttpStatus.FORBIDDEN)
+//    protected fun handleAccessDeniedException(ex: AccessDeniedException?, request: WebRequest?): ResponseEntity<Any> {
+//        return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access Denied")
+//    }
+//
+//    @ExceptionHandler(value = [Exception::class])
+//    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+//    protected fun handleInternalServerError(ex: Exception?, request: WebRequest?): ResponseEntity<Any> {
+//        println(ex?.message);
+//        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error")
+//    }
 }
