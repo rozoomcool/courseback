@@ -54,6 +54,7 @@ class JwtAuthFilter(
         }
         if (StringUtils.hasLength(username) && SecurityContextHolder.getContext().authentication == null) {
             val userDetails: UserDetails = try {
+                println("username::: " + username)
                 userService
                     .userDetailsService()
                     .loadUserByUsername(username)
