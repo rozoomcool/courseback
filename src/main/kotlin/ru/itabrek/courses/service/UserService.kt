@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.stereotype.Service
+import ru.itabrek.courses.dto.UserUpdateDto
 import ru.itabrek.courses.entity.User
 import ru.itabrek.courses.entity.UserData
 import ru.itabrek.courses.exceptions.UserNotFoundException
@@ -48,7 +49,7 @@ class UserService(
         return findByUsername(username)
     }
 
-    fun updateUser(oldUser: User, user: User): User {
+    fun updateUser(oldUser: User, user: UserUpdateDto): User {
         return userRepository.save(oldUser.apply {
             firstname = user.firstname
             lastname = user.lastname

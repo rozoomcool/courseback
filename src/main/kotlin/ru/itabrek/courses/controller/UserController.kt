@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import ru.itabrek.courses.dto.UserResponse
+import ru.itabrek.courses.dto.UserUpdateDto
 import ru.itabrek.courses.entity.User
 import ru.itabrek.courses.service.UserService
 import java.security.Principal
@@ -35,13 +36,10 @@ class UserController(
     }
 
     @PutMapping()
-    fun update(user: User, principal: Principal): ResponseEntity<User> {
+    fun update(user: UserUpdateDto, principal: Principal): ResponseEntity<User> {
         logger.info("USER/UPDATE")
         try {
             val oldUser = userService.findByUsername(principal.name)
-            if (oldUser.username != user.username) {
-                return ResponseEntity(null, HttpStatus.FORBIDDEN)
-            }
             return ResponseEntity.ok(userService.updateUser(oldUser, user))
         } catch (e: Exception) {
             logger.error(e.message)
